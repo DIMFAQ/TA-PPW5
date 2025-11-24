@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana & Ilmiah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-light">
+
+    <div class="calculator-wrapper" id="calculator-wrapper">
+
+        <div class="app-header">
+            <div class="title">Kalkulator</div>
+
+            <div class="header-right">
+                <button id="history-toggle" class="history-btn">Riwayat</button>
+
+                <div class="theme-selector">
+                    <div class="theme-btn active" data-theme="light"></div>
+                    <div class="theme-btn" data-theme="dark"></div>
+                    <div class="theme-btn" data-theme="blue"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mode-selector-tabs">
+            <input type="radio" name="mode" id="mode-basic" value="basic" checked>
+            <label for="mode-basic" class="mode-tab-label">Standar</label>
+
+            <input type="radio" name="mode" id="mode-scientific" value="scientific">
+            <label for="mode-scientific" class="mode-tab-label">Ilmiah</label>
+        </div>
+
+        <div class="history-container">
+            <ul id="history-list" class="history-list"></ul>
+        </div>
+
+        <div class="calculator-display">
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand"></div>
+        </div>
+
+        <div class="scientific-wrapper">
+            <div class="scientific-buttons">
+                <button data-function="sin">sin</button>
+                <button data-function="cos">cos</button>
+                <button data-function="tan">tan</button>
+                <button data-function="log">log</button>
+                <button data-function="sqrt">√</button>
+                <button data-function="pow2">x²</button>
+                <button data-function="exp">exp</button>
+                <button data-function="pi">π</button>
+            </div>
+        </div>
+
+        <div class="buttons-area">
+            <div class="calculator-grid">
+
+                <button class="memory-btn" data-memory="mc">MC</button>
+                <button class="memory-btn" data-memory="mr">MR</button>
+                <button class="memory-btn" data-memory="m+">M+</button>
+                <button class="memory-btn" data-memory="m-">M-</button>
+
+                <button class="function-btn" data-all-clear>AC</button>
+                <button class="function-btn" data-delete>DEL</button>
+                <button class="function-btn" data-operator="%">%</button>
+                <button class="operator-btn" data-operator="÷">÷</button>
+
+                <button data-number="7">7</button>
+                <button data-number="8">8</button>
+                <button data-number="9">9</button>
+                <button class="operator-btn" data-operator="×">×</button>
+
+                <button data-number="4">4</button>
+                <button data-number="5">5</button>
+                <button data-number="6">6</button>
+                <button class="operator-btn" data-operator="-">-</button>
+
+                <button data-number="1">1</button>
+                <button data-number="2">2</button>
+                <button data-number="3">3</button>
+                <button class="operator-btn" data-operator="+">+</button>
+
+                <button class="span-two" data-number="0">0</button>
+                <button data-decimal>.</button>
+                <button class="equals-btn operator-btn" data-equals>=</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="history-modal" class="history-modal" style="display:none;">
+        <div class="history-modal-backdrop"></div>
+
+        <div class="history-modal-panel">
+
+            <div class="history-modal-header">
+                <h3>Riwayat Lengkap</h3>
+                <button id="close-history-btn" class="close-btn">✕</button>
+            </div>
+
+            <div class="history-modal-body">
+
+                <p id="history-empty" style="display:none; text-align:center; padding:10px;">
+                    Belum ada riwayat.
+                </p>
+
+                <ul id="history-full-list" class="history-full-list"></ul>
+
+            </div>
+
+            <div class="history-modal-footer">
+                <button id="clear-history-btn" class="danger-btn">Hapus Semua</button>
+                <button id="export-history-btn" class="export-btn">Export</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
